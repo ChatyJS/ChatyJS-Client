@@ -1,15 +1,17 @@
 <div>
-  <form action="/login" method="post">
+  <form action="/login" method="get" (ngSubmit)="login(email.value, password.value)">
     <fieldset>
       <legend>Log In:</legend>
-      <label for="name">Username: </label>
-      <input type="text"
-             name="username"
+      <label for="name">Email: </label>
+      <input type="email"
+             #email
+             name="email"
              value="" 
              placeholder="Username">
       <br />
       <label for="password">Password:</label>
       <input type="password"
+             #password
              name="password"
              value=""
              placeholder="Password">
