@@ -14,14 +14,26 @@ export class LoginComponent implements OnInit {
   }
 
   login(email, password){
+    let login = { email: email, password: password };
+
     this._http
-      .post("http://localhost:1337/login", this.login)
+      .post("http://localhost:8000/login", login)
       .subscribe(
         (response) => {
-          console.log(response);
+          console.log("[RESPONSE]:", response);
+          let loginData = response.json();
+          let message = loginData.message;
+          let user = loginData.user;
+          if (user) {
+            console.log(message);
+            console.log(user);
+          } else {
+            console.log(message);
+            console.log(user);
+          }
         },
         (error) => {
-          console.log(error);
+          console.error("[ERROR]:", error);
         },
         () => {}
       )
