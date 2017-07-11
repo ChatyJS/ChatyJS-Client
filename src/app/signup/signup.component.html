@@ -1,0 +1,22 @@
+<div>
+  <form action="/user" method="post" (ngSubmit)="setup(email.value, password.value)">
+    <fieldset>
+      <legend>Log In:</legend>
+      <label for="name">Email: </label>
+      <input type="email"
+             #email
+             name="email"
+             value=""
+             placeholder="Username">
+      <br />
+      <label for="password">Password:</label>
+      <input type="password"
+             #password
+             name="password"
+             value=""
+             placeholder="Password">
+      <br />
+      <button type="submit">Submit</button>
+    </fieldset>
+  </form>
+</div>
