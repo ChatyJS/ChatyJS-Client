@@ -1,26 +1,52 @@
 <div class="row">
   <form action="/user" method="post" (ngSubmit)="signup(userForm)">
     <div class="form-group">
-      <fieldset>
-        <legend>Log In:</legend>
-        <label for="name">Email: </label>
-        <input type="email"
-               class="form-control"
-               #email
-               name="email"
-               value=""
-               placeholder="Username">
-        <br />
-        <label for="password">Password:</label>
-        <input type="password"
-               class="form-control"
-               #password
-               name="password"
-               value=""
-               placeholder="Password">
-        <br />
-        <button type="submit">Submit</button>
-      </fieldset>
+      <div class="row"><fieldset>
+          <legend>Sign up:</legend>
+          <label for="name">Name: </label>
+          <input type="text"
+                 class="form-control"
+                 #username
+                 name="username"
+                 value=""
+                 placeholder="Username">
+          <br />
+          <label for="age">Age: </label>
+          <input type="text"
+                 class="form-control"
+                 #age
+                 name="user"
+                 value=""
+                 placeholder="Age">
+          <br />
+          <label for="email">Email: </label>
+          <input type="email"
+                 class="form-control"
+                 #email
+                 name="email"
+                 value=""
+                 placeholder="Email">
+          <br />
+          <label for="password">Password:</label>
+          <input type="password"
+                 class="form-control"
+                 #password
+                 name="password"
+                 value=""
+                 placeholder="Password">
+          <br />
+        </fieldset></div>
+      <div class="row">
+        <div class="col-sm-5">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-5">
+          <button class="btn btn-secondary" type="button" [routerLink]="['/login']">
+            Cancel
+          </button>
+        </div>
+      </div>
     </div>
   </form>
 </div>
+
