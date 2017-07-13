@@ -12,12 +12,14 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AuthenticationComponent
   ],
   imports: [
     NgbModule.forRoot(),
