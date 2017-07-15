@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Http } from '@angular/http';
 
 @Component({
@@ -7,6 +8,8 @@ import { Http } from '@angular/http';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+
+  errors:string = null;
 
   constructor(private _http: Http) { }
 
@@ -28,8 +31,7 @@ export class LoginComponent implements OnInit {
             console.log(message);
             console.log(user);
           } else {
-            console.log(message);
-            console.log(user);
+            this.errors = message;
           }
         },
         (error) => {
