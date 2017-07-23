@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 // Routing
 import { routing } from "./app.routes";
+import { AuthGuard } from "./guard/auth.guard";
 
 // Component
 import { AppComponent } from './app.component';
@@ -16,8 +17,8 @@ import { AuthenticationComponent } from './authentication/authentication.compone
 import { OptionsComponent } from './options/options.component';
 import { ConversationsComponent } from './conversations/conversations.component';
 import { MessagesComponent } from './messages/messages.component';
-import { ActiveUsersComponent } from './active-users/active-users.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ActivesComponent } from './actives/actives.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     OptionsComponent,
     ConversationsComponent,
     MessagesComponent,
-    ActiveUsersComponent,
-    DashboardComponent
+    DashboardComponent,
+    ActivesComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -38,7 +39,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HttpModule,
     routing
   ],
-  providers: [],
+  providers: [
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

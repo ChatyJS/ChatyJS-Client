@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   errors:string = null;
-  returnUrl: string = '/chaty';
+  returnUrl: string;
 
   constructor(
     private _http: Http,
@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/chaty';
   }
 
   login(email, password){
@@ -37,6 +38,7 @@ export class LoginComponent implements OnInit {
           if (user) {
             console.log(message);
             console.log(user);
+            localStorage.setItem('currentUser', JSON.stringify(user));
             this.router.navigate([this.returnUrl]);
           } else {
             this.errors = message;
