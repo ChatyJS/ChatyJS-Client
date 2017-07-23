@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errors">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>¡Error!</strong>  {{ errors }}
+  </div>
+</div>
+
+<div class="row">
+  <form action="/user" method="post" #userForm (ngSubmit)="signup(username.value, age.value, email.value, password.value)">
+    <div class="form-group">
+      <div class="row"><fieldset>
+          <legend>Sign up:</legend>
+          <label for="name">Name: </label>
+          <input type="text"
+                 class="form-control"
+                 #username
+                 name="username"
+                 value=""
+                 placeholder="Username">
+          <br />
+          <label for="age">Age: </label>
+          <input type="number"
+                 class="form-control"
+                 #age
+                 name="user"
+                 value=""
+                 placeholder="Age">
+          <br />
+          <label for="email">Email: </label>
+          <input type="email"
+                 class="form-control"
+                 #email
+                 name="email"
+                 value=""
+                 placeholder="Email">
+          <br />
+          <label for="password">Password:</label>
+          <input type="password"
+                 class="form-control"
+                 #password
+                 name="password"
+                 value=""
+                 placeholder="Password">
+          <br />
+        </fieldset></div>
+      <div class="row">
+        <div class="col-sm-5">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-5">
+          <button class="btn btn-secondary" type="button" [routerLink]="['/login']">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+

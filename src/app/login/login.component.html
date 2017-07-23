@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="errors">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    <strong>¡Error!</strong>  {{ errors }}
+  </div>
+</div>
+
+<div class="row">
+  <form action="/login" method="get" (ngSubmit)="login(email.value, password.value)">
+    <div class="form-group">
+      <div class="row"><fieldset>
+          <legend>Log In:</legend>
+          <label for="name">Email: </label>
+          <input type="email"
+                 class="form-control"
+                 #email
+                 name="email"
+                 value=""
+                 placeholder="Email">
+          <br />
+          <label for="password">Password:</label>
+          <input type="password"
+                 class="form-control"
+                 #password
+                 name="password"
+                 value=""
+                 placeholder="Password">
+          <br />
+        </fieldset></div>
+        <div class="row">
+          <div class="col-sm-6">
+            <button class="form-control btn btn-primary" type="submit">Log In</button>
+          </div>
+          <div class="col-sm-6">
+            <button class="form-control btn btn-secondary" type="button" [routerLink]="['/signup']">
+              Sign up
+            </button>
+          </div>
+        </div>
+    </div>
+  </form>
+</div>
