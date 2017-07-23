@@ -13,13 +13,23 @@ import { SignupComponent } from './signup/signup.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationComponent } from './authentication/authentication.component';
+import { OptionsComponent } from './options/options.component';
+import { ConversationsComponent } from './conversations/conversations.component';
+import { MessagesComponent } from './messages/messages.component';
+import { ActiveUsersComponent } from './active-users/active-users.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    AuthenticationComponent
+    AuthenticationComponent,
+    OptionsComponent,
+    ConversationsComponent,
+    MessagesComponent,
+    ActiveUsersComponent,
+    DashboardComponent
   ],
   imports: [
     NgbModule.forRoot(),
