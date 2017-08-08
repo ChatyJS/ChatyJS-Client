@@ -1,20 +1,19 @@
-<div>
-  <pre>{{currentUser | json}}</pre>
-</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <app-options></app-options>
+    </div>
 
-<div>
-  <div>
-    <app-options></app-options>
-  </div>
-  <div>
-    <app-conversations></app-conversations>
-  </div>
+    <div class="col-sm-2">
+      <app-conversations></app-conversations>
+    </div>
 
-  <div>
-    <app-messages></app-messages>
-  </div>
+    <div class="col-sm-6">
+      <app-messages></app-messages>
+    </div>
 
-  <div>
-    <app-actives></app-actives>
+    <div class="col-sm-2">
+      <app-actives></app-actives>
+    </div>
   </div>
 </div>
