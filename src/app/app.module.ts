@@ -7,18 +7,21 @@ import { HttpModule } from '@angular/http';
 import { routing } from "./app.routes";
 import { AuthGuard } from "./_guard/auth.guard";
 
+// Services
+import { LoginService } from "./_services/login";
+
 // Component
 import { AppComponent } from './app.component';
 import { LoginComponent } from './_components/login/login.component';
 import { SignupComponent } from './_components/signup/signup.component';
-
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AuthenticationComponent } from './_components/authentication/authentication.component';
 import { OptionsComponent } from './_components/options/options.component';
 import { ConversationsComponent } from './_components/conversations/conversations.component';
 import { MessagesComponent } from './_components/messages/messages.component';
 import { DashboardComponent } from './_components/dashboard/dashboard.component';
 import { ActivesComponent } from './_components/actives/actives.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -40,7 +43,8 @@ import { ActivesComponent } from './_components/actives/actives.component';
     routing
   ],
   providers: [
-    AuthGuard
+    AuthGuard,
+    LoginService
   ],
   bootstrap: [AppComponent]
 })
