@@ -25,6 +25,26 @@ export class LoginComponent implements OnInit {
   }
 
   login(email, password){
-    this.loginService.login(email, password);
+    this.loginService.login(email, password)
+      .subscribe(
+        (response) => {
+          console.log("[RESPONSE]:", response);
+          let loginData = response.json();
+          let message = loginData.message;
+          let user = loginData.user;
+          if (user) {
+            console.log(message);
+            console.log(user);
+            localStorage.setItem('currentUser', JSON.stringify(user));
+            this.router.navigate([this.returnUrl]);
+          } else {
+            this.errors = message;
+          }
+        },
+        (error) => {
+          console.error("[ERROR]:", error);
+        },
+        () => {}
+      )
   }
 }
