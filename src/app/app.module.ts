@@ -9,6 +9,7 @@ import { AuthGuard } from "./_guard/auth.guard";
 
 // Services
 import { LoginService } from "./_services/login";
+import { UserService } from "./_services/user";
 
 // Component
 import { AppComponent } from './app.component';
@@ -44,7 +45,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [
     AuthGuard,
-    LoginService
+    LoginService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
