@@ -5,20 +5,20 @@ import { HttpModule } from '@angular/http';
 
 // Routing
 import { routing } from "./app.routes";
-import { AuthGuard } from "./guard/auth.guard";
+import { AuthGuard } from "./_guard/auth.guard";
 
 // Component
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './_components/login/login.component';
+import { SignupComponent } from './_components/signup/signup.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AuthenticationComponent } from './authentication/authentication.component';
-import { OptionsComponent } from './options/options.component';
-import { ConversationsComponent } from './conversations/conversations.component';
-import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ActivesComponent } from './actives/actives.component';
+import { AuthenticationComponent } from './_components/authentication/authentication.component';
+import { OptionsComponent } from './_components/options/options.component';
+import { ConversationsComponent } from './_components/conversations/conversations.component';
+import { MessagesComponent } from './_components/messages/messages.component';
+import { DashboardComponent } from './_components/dashboard/dashboard.component';
+import { ActivesComponent } from './_components/actives/actives.component';
 
 @NgModule({
   declarations: [

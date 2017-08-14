@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Http } from '@angular/http';
 
-import { User } from "../models/User";
+import { User } from "../../_models/User";
 
 @Component({
   selector: 'app-signup',
