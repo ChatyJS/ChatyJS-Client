@@ -14,8 +14,7 @@ export class ConversationsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let user = { id: 1 };
-    this.userService.getFriends(user)
+    this.userService.getFriends()
       .subscribe(
         (res) => console.log("RES:", res.json())
         , (error) => console.log("ERROR:", error.json())
