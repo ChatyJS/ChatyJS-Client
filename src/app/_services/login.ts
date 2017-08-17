@@ -20,4 +20,8 @@ export class LoginService {
     let options = new RequestOptions({ headers: headers , withCredentials: true });
     return this._http.post("http://localhost:8000/login", login, options)
   }
+
+  logout() {
+    localStorage.removeItem('currentUser');
+  }
 }
