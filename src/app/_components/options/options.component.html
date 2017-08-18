@@ -1,13 +1,33 @@
-<nav class="nav navbar-light navbar-toggleable-sm">
-  <div class="navbar-collapse collapse" id="navbarWEX">
-    <li class="nav-link"><span class="fa fa-4x fa-comments"></span></li>
-    <li class="nav-link"><span class="fa fa-4x fa-user"></span></li>
-    <li class="nav-link"><span class="fa fa-4x fa-group"></span></li>
-    <li class="nav-link">
-      <a href="/logout">
-        <span class="fa fa-4x fa-cog">
+<div class="col-sm-6">
+  <nav class="nav navbar-light navbar-toggleable-sm">
+    <div class="navbar-collapse collapse" id="navbarWEX">
+      <li class="nav-link">
+        <span class="fa fa-4x fa-comments" (click)="choose('conversations')">
         </span>
-      </a>
-    </li>
-  </div>
-</nav>
+      </li>
+
+      <li class="nav-link">
+        <span class="fa fa-4x fa-user" (click)="choose('friends')">
+        </span>
+      </li>
+
+      <li class="nav-link">
+        <span class="fa fa-4x fa-group" (click)="choose('groups')">
+        </span>
+      </li>
+
+      <li class="nav-link">
+        <a href="/logout">
+          <span class="fa fa-4x fa-sign-out">
+          </span>
+        </a>
+      </li>
+    </div>
+  </nav>
+</div>
+
+<div class="col-sm-6">
+    <app-conversations *ngIf="choosedList === 'conversations'"></app-conversations>
+    <app-friends *ngIf="choosedList === 'friends'"></app-friends>
+    <app-groups *ngIf="choosedList === 'groups'"></app-groups>
+</div>

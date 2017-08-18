@@ -1,15 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FriendService } from "../../_services/friend";
+
+import { User } from "../../_models/User";
+
 @Component({
   selector: 'app-friends',
   templateUrl: './friends.component.html',
   styleUrls: ['./friends.component.css']
 })
 export class FriendsComponent implements OnInit {
+  friends:User[] = []
 
-  constructor() { }
+  constructor(
+    private friendService: FriendService
+  ) { }
 
   ngOnInit() {
+    this.friendService.getFriends()
+      .subscribe(
+        (res) => {
+          this.friends = res.json().friends;
+        }
+        , (error) => console.log("ERROR:", error.json())
+        , () => {}
+      );
   }
-
 }

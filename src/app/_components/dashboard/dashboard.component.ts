@@ -1,6 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-
-import { User } from "../../_models/User";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +7,6 @@ import { User } from "../../_models/User";
 })
 export class DashboardComponent implements OnInit {
 
-  @Input() user:User;
   constructor() { }
 
   ngOnInit() {

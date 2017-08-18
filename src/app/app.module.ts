@@ -25,6 +25,7 @@ import { ActivesComponent } from './_components/actives/actives.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FriendsComponent } from './_components/friends/friends.component';
+import { GroupsComponent } from './_components/groups/groups.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FriendsComponent } from './_components/friends/friends.component';
     MessagesComponent,
     DashboardComponent,
     ActivesComponent,
-    FriendsComponent
+    FriendsComponent,
+    GroupsComponent
   ],
   imports: [
     NgbModule.forRoot(),

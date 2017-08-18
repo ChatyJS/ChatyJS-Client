@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./options.component.css']
 })
 export class OptionsComponent implements OnInit {
+  choosedList: string;
 
-  constructor() { }
+  constructor(){ }
 
   ngOnInit() {
+    this.choosedList = 'conversations';
   }
 
+  choose(listType) {
+    this.choosedList = listType;
+  }
 }
