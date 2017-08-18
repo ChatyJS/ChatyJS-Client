@@ -26,4 +26,14 @@ export class FriendsComponent implements OnInit {
         , () => {}
       );
   }
+
+  addFriend(){
+    let friendName = "Cristhian";
+    this.friendService.addFriend(friendName)
+      .subscribe(
+        (res) => console.log("RES:", res)
+        , (error) => console.log("Error:", error)
+        , () => {}
+      )
+  }
 }
