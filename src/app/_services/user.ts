@@ -13,10 +13,4 @@ export class UserService {
     private _http: Http
   ) { }
 
-  getFriends(){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    let options = new RequestOptions({ headers: headers , withCredentials: true });
-    return this._http.get("http://localhost:8000/friends/", options);
-  }
 }

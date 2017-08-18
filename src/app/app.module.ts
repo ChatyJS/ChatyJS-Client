@@ -8,6 +8,7 @@ import { routing } from "./app.routes";
 import { AuthGuard } from "./_guard/auth.guard";
 
 // Services
+import { FriendService } from "./_services/friend";
 import { LoginService } from "./_services/login";
 import { UserService } from "./_services/user";
 
@@ -23,6 +24,7 @@ import { DashboardComponent } from './_components/dashboard/dashboard.component'
 import { ActivesComponent } from './_components/actives/actives.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FriendsComponent } from './_components/friends/friends.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ConversationsComponent,
     MessagesComponent,
     DashboardComponent,
-    ActivesComponent
+    ActivesComponent,
+    FriendsComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -45,6 +48,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [
     AuthGuard,
+    FriendService,
     LoginService,
     UserService
   ],

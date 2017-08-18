@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from "../../_services/user";
+import { FriendService } from "../../_services/friend";
 
 @Component({
   selector: 'app-conversations',
@@ -10,11 +10,11 @@ import { UserService } from "../../_services/user";
 export class ConversationsComponent implements OnInit {
 
   constructor(
-    private userService: UserService
+    private friendService: FriendService
   ) { }
 
   ngOnInit() {
-    this.userService.getFriends()
+    this.friendService.getFriends()
       .subscribe(
         (res) => console.log("RES:", res.json())
         , (error) => console.log("ERROR:", error.json())
