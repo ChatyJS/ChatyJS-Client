@@ -7,8 +7,13 @@
   </div>
 </div>
 
+<div  ng-app>
+
+
+
+
 <div class="row">
-  <form action="/login" method="get" (ngSubmit)="login(email.value, password.value)">
+  <form action="/login" method="get" (ngSubmit)="login(email.value, password.value)" name="forma">
     <div class="form-group">
       <div class="row"><fieldset>
           <legend>Log In:</legend>
@@ -16,17 +21,22 @@
           <input type="email"
                  class="form-control"
                  #email
-                 name="email"
+                 name="email" ng-model="inp" required
                  value=""
                  placeholder="Email">
+        <div ng-show="forma.email.$error.required" class=" alert-danger">(*) Campo requerido</div>
+        <div ng-show="forma.email.$error.email" class=" alert-danger">Formato Email: ejemplo@gmail.com</div>
+
           <br />
           <label for="password">Password:</label>
           <input type="password"
                  class="form-control"
                  #password
-                 name="password"
+
+                 name="password" ng-model="inp1" required
                  value=""
                  placeholder="Password">
+        <div ng-show="forma.password.$error.required" class=" alert-danger">(*) Campo requerido</div>
           <br />
         </fieldset></div>
         <div class="row">
@@ -42,6 +52,6 @@
     </div>
   </form>
 </div>
-
+</div>
 
 
