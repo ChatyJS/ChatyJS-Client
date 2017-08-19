@@ -4,6 +4,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { LoginService } from "../../_services/login";
 
+import { User } from "../../_models/User";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -13,6 +15,7 @@ export class LoginComponent implements OnInit {
 
   errors:string = null;
   returnUrl: string;
+  user?:User;
 
   constructor(
     private loginService: LoginService,
@@ -35,11 +38,11 @@ export class LoginComponent implements OnInit {
           console.log("[RESPONSE]:", response);
           let loginData = response.json();
           let message = loginData.message;
-          let user = loginData.user;
-          if (user) {
+          this.user = loginData.user;
+          if (this.user) {
             console.log(message);
-            console.log(user);
-            localStorage.setItem('currentUser', JSON.stringify(user));
+            console.log(this.user);
+            localStorage.setItem('currentUser', JSON.stringify(this.user));
             this.router.navigate([this.returnUrl]);
           } else {
             this.errors = message;

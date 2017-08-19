@@ -8,6 +8,7 @@ import { routing } from "./app.routes";
 import { AuthGuard } from "./_guard/auth.guard";
 
 // Services
+import { ChannelService } from "./_services/channels";
 import { FriendService } from "./_services/friend";
 import { LoginService } from "./_services/login";
 import { UserService } from "./_services/user";
@@ -50,6 +51,7 @@ import { GroupsComponent } from './_components/groups/groups.component';
   ],
   providers: [
     AuthGuard,
+    ChannelService,
     FriendService,
     LoginService,
     UserService
