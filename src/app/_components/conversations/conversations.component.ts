@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component
+  , OnInit
+  , Output
+  , EventEmitter } from '@angular/core';
 
 import { ChannelService } from "../../_services/channels";
 
@@ -12,6 +15,8 @@ import { Channel } from "../../_models/Channel";
   styleUrls: ['./conversations.component.css']
 })
 export class ConversationsComponent implements OnInit {
+  @Output()
+  channelEvent: EventEmitter<Channel> = new EventEmitter<Channel>();
   channels:Channel[] = []
 
   constructor(
@@ -24,6 +29,18 @@ export class ConversationsComponent implements OnInit {
         (res) => {
           let channelResp = res.json();
           this.channels = channelResp.channels;
+        }
+        , (error) => console.log("Error", error)
+        , () => {}
+      )
+  }
+
+  chooseChannel(channel){
+    this.channelService.getChannelById(channel.id)
+      .subscribe(
+        (res) => {
+          let channel = res.json();
+          this.channelEvent.emit(channel)
         }
         , (error) => console.log("Error", error)
         , () => {}

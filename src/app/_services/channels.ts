@@ -26,5 +26,12 @@ export class ChannelService {
     let options = new RequestOptions({ headers: headers , withCredentials: true });
     return this._http.get("http://localhost:8000/channels/", options);
   }
+
+  getChannelById(channelId){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let options = new RequestOptions({ headers: headers , withCredentials: true });
+    return this._http.get("http://localhost:8000/channel/" + channelId, options);
+  }
 }
 

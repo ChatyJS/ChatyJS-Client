@@ -6,7 +6,7 @@
     <!--Header-->
     <div class="row header-wrap">
       <div class="chat-header col-sm-12">
-        <h4>Conversation Title</h4>
+        <h4>Conversation</h4>
         <div class="header-button">
           <a class="btn pull-right info-btn">
             <i class="fa fa-info-circle fa-lg"></i>
@@ -17,20 +17,14 @@
 
     <!--Messages-->
     <div class="row content-wrap messages">
-      <div class="msg">
+      <div class="msg" *ngFor="let message of messages">
         <div class="media-body">
           <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
 
-          <h5 class="media-heading">Walter White</h5>
-          <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
-        </div>
-      </div>
-      <div class="msg">
-        <div class="media-body">
-          <small class="pull-right time"><i class="fa fa-clock-o"></i> 12:10am</small>
-
-          <h5 class="media-heading">Walter White</h5>
-          <small class="col-sm-11">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu pulvinar magna. Phasellus semper scelerisque purus, et semper nisl lacinia sit amet. Praesent venenatis turpis vitae purus semper, eget sagittis velit venenatis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos...</small>
+          <h5 class="media-heading">{{ getUser(message.author) }}</h5>
+          <small class="col-sm-11">
+            {{ message.text }}
+          </small>
         </div>
       </div>
     </div>
