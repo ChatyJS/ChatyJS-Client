@@ -6,57 +6,61 @@
     <strong>¡Error!</strong>  {{ errors }}
   </div>
 </div>
-
+<div  ng-app>
 <div class="row">
-  <div class="col-md-4 col-md-offset-4 text-center">
-    <form action="/user" method="post" #userForm (ngSubmit)="signup(username.value, age.value, email.value, password.value)">
-      <div class="form-group">
-        <div class="row"><fieldset>
-            <legend>Sign up:</legend>
-            <label for="name">Name: </label>
-            <input type="text"
-                   class="form-control"
-                   #username
-                   name="username"
-                   value=""
-                   placeholder="Username">
-            <br />
-            <label for="age">Age: </label>
-            <input type="number"
-                   class="form-control"
-                   #age
-                   name="user"
-                   value=""
-                   placeholder="Age">
-            <br />
-            <label for="email">Email: </label>
-            <input type="email"
-                   class="form-control"
-                   #email
-                   name="email"
-                   value=""
-                   placeholder="Email">
-            <br />
-            <label for="password">Password:</label>
-            <input type="password"
-                   class="form-control"
-                   #password
-                   name="password"
-                   value=""
-                   placeholder="Password">
-            <br />
-          </fieldset></div>
-        <div class="row">
-          <div class="col-sm-5">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-          <div class="col-sm-5">
-            <button class="btn btn-secondary" type="button" [routerLink]="['/login']">
-              Cancel
-            </button>
-          </div>
+  <form action="/user" method="post" #userForm (ngSubmit)="signup(username.value, age.value, email.value, password.value)" name="forma">
+    <div class="form-group">
+      <div class="row"><fieldset>
+          <legend>Sign up:</legend>
+          <label for="name">Name: </label>
+          <input type="text"
+                 class="form-control"
+                 #username
+                 name="username" ng-model="inp" required
+                 value=""
+                 placeholder="Username">
+        <div ng-show="forma.username.$error.required" class=" alert-danger">(*) Campo requerido</div>
+          <br />
+          <label for="age">Age: </label>
+          <input type="number"
+                 class="form-control"
+                 #age
+                 name="user" ng-model="inp1" required
+                 value=""
+                 placeholder="Age">
+        <div ng-show="forma.user.$error.required" class=" alert-danger">(*) Campo requerido</div>
+          <br />
+          <label for="email">Email: </label>
+          <input type="email"
+                 class="form-control"
+                 #email
+                 name="email" ng-model="inp2" required
+                 value=""
+                 placeholder="Email">
+        <div ng-show="forma.email.$error.required" class=" alert-danger">(*) Campo requerido</div>
+        <div ng-show="forma.email.$error.email" class=" alert-danger">Formato Email: ejemplo@gmail.com</div>
+          <br />
+          <label for="password">Password:</label>
+          <input type="password"
+                 class="form-control"
+                 #password
+                 name="password" ng-model="inp3" required
+                 value=""
+                 placeholder="Password">
+        <div ng-show="forma.password.$error.required" class=" alert-danger">(*) Campo requerido</div>
+          <br />
+        </fieldset></div>
+      <div class="row">
+        <div class="col-sm-5">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-5">
+          <button class="btn btn-secondary" type="button" [routerLink]="['/login']">
+            Cancel
+          </button>
         </div>
       </div>
     </form>
   </div>
+</div>
 </div>
