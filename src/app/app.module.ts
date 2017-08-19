@@ -12,6 +12,7 @@ import { ChannelService } from "./_services/channels";
 import { FriendService } from "./_services/friend";
 import { LoginService } from "./_services/login";
 import { UserService } from "./_services/user";
+import { GroupService } from "./_services/group";
 
 // Component
 import { AppComponent } from './app.component';
@@ -54,7 +55,8 @@ import { GroupsComponent } from './_components/groups/groups.component';
     ChannelService,
     FriendService,
     LoginService,
-    UserService
+    UserService,
+    GroupService
   ],
   bootstrap: [AppComponent]
 })

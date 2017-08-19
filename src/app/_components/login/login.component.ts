@@ -37,7 +37,8 @@ export class LoginComponent implements OnInit {
         (response) => {
           console.log("[RESPONSE]:", response);
           let loginData = response.json();
-          let message = loginData.message;
+          let message = loginData._body;
+          console.log("Mensaje?: ", message);
           this.user = loginData.user;
           if (this.user) {
             console.log(message);
