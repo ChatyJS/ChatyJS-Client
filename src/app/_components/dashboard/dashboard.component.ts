@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Channel } from '../../_models/Channel';
 import { User } from '../../_models/User';
 import { Message } from '../../_models/Messages';
 
@@ -12,6 +13,7 @@ export class DashboardComponent implements OnInit {
   choosedList: string;
   messages:Message[] = [];
   users:User[] = [];
+  channel?:Channel;
 
   constructor() { }
 
@@ -24,6 +26,7 @@ export class DashboardComponent implements OnInit {
   }
 
   chooseConversationEvent(event){
+    this.channel = event.channel;
     this.messages = event.channel.messages;
     this.users = event.channel.users;
   }

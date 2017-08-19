@@ -10,6 +10,7 @@ import { AuthGuard } from "./_guard/auth.guard";
 // Services
 import { ChannelService } from "./_services/channels";
 import { FriendService } from "./_services/friend";
+import { MessageService } from "./_services/messages";
 import { LoginService } from "./_services/login";
 import { UserService } from "./_services/user";
 import { GroupService } from "./_services/group";
@@ -54,6 +55,7 @@ import { GroupsComponent } from './_components/groups/groups.component';
     AuthGuard,
     ChannelService,
     FriendService,
+    MessageService,
     LoginService,
     UserService,
     GroupService

@@ -33,10 +33,10 @@
     <div class="row send-wrap">
       <div class="send-message">
         <div class="message-text">
-          <textarea class="no-resize-bar form-control" rows="4" placeholder="Write a message..."></textarea>
+          <textarea #textMsg class="no-resize-bar form-control" rows="4" placeholder="Write a message..."></textarea>
         </div>
         <div class="send-button">
-          <a class="btn">Send <i class="fa fa-send"></i></a>
+          <button class="btn" (click)="pushMessage(textMsg.value)">Send <i class="fa fa-send"></i></button>
         </div>
       </div>
     </div>
